@@ -14350,10 +14350,10 @@ Source: www.kingbright.com</description>
 <part name="JP2" library="jumper" deviceset="JP1Q" device="" value="GB5V"/>
 <part name="SUPPLY20" library="supply2" deviceset="+5V" device=""/>
 <part name="SUPPLY22" library="supply2" deviceset="+5V" device=""/>
-<part name="MIDIOUT" library="pinhead" deviceset="PINHD-1X3" device="" value="MIDI OUT"/>
+<part name="MIDI-OUT" library="pinhead" deviceset="PINHD-1X3" device="" value="MIDI OUT"/>
 <part name="SUPPLY24" library="supply2" deviceset="+5V" device=""/>
 <part name="X2" library="con-hirschmann" deviceset="MAB5SH" device="" value="MIDI OUT"/>
-<part name="MIDIIN" library="pinhead" deviceset="PINHD-1X2" device="" value="MIDI IN"/>
+<part name="MIDI-IN" library="pinhead" deviceset="PINHD-1X2" device="" value="MIDI IN"/>
 <part name="C6" library="resistor" deviceset="CPOL-US" device="E2.5-6" value="22uF"/>
 <part name="SUPPLY16" library="supply2" deviceset="GND" device=""/>
 <part name="X4" library="con-molex" deviceset="22-23-2021" device=""/>
@@ -14391,9 +14391,9 @@ Source: www.kingbright.com</description>
 <part name="SUPPLY21" library="supply2" deviceset="GND" device=""/>
 <part name="R4" library="resistor" deviceset="R-US_" device="0204/7" value="220"/>
 <part name="R5" library="resistor" deviceset="R-US_" device="0204/7" value="220"/>
-<part name="5VDC" library="pinhead" deviceset="PINHD-1X2" device="" value="DCPWR"/>
 <part name="SUPPLY28" library="supply2" deviceset="+5V" device=""/>
 <part name="SUPPLY29" library="supply2" deviceset="GND" device=""/>
+<part name="X3" library="con-molex" deviceset="22-23-2021" device="" value="DCPWR"/>
 </parts>
 <sheets>
 <sheet>
@@ -14429,10 +14429,10 @@ Source: www.kingbright.com</description>
 <instance part="JP2" gate="A" x="157.48" y="116.84" rot="R180"/>
 <instance part="SUPPLY20" gate="+5V" x="157.48" y="127"/>
 <instance part="SUPPLY22" gate="+5V" x="101.6" y="124.46" rot="R270"/>
-<instance part="MIDIOUT" gate="A" x="238.76" y="119.38"/>
+<instance part="MIDI-OUT" gate="A" x="238.76" y="119.38"/>
 <instance part="SUPPLY24" gate="+5V" x="223.52" y="99.06" rot="R270"/>
 <instance part="X2" gate="G$1" x="185.42" y="119.38" rot="R270"/>
-<instance part="MIDIIN" gate="G$1" x="304.8" y="71.12"/>
+<instance part="MIDI-IN" gate="G$1" x="304.8" y="71.12"/>
 <instance part="C6" gate="G$1" x="86.36" y="119.38"/>
 <instance part="SUPPLY16" gate="GND" x="86.36" y="111.76"/>
 <instance part="X4" gate="-1" x="-10.16" y="121.92" rot="R180"/>
@@ -14471,9 +14471,10 @@ Source: www.kingbright.com</description>
 <instance part="SUPPLY21" gate="GND" x="154.94" y="12.7"/>
 <instance part="R4" gate="G$1" x="157.48" y="27.94" rot="R180"/>
 <instance part="R5" gate="G$1" x="147.32" y="25.4" rot="R180"/>
-<instance part="5VDC" gate="G$1" x="101.6" y="137.16"/>
 <instance part="SUPPLY28" gate="+5V" x="86.36" y="139.7" rot="R90"/>
 <instance part="SUPPLY29" gate="GND" x="76.2" y="137.16" rot="R270"/>
+<instance part="X3" gate="-1" x="101.6" y="139.7"/>
+<instance part="X3" gate="-2" x="101.6" y="137.16"/>
 </instances>
 <busses>
 </busses>
@@ -14569,9 +14570,9 @@ Source: www.kingbright.com</description>
 <pinref part="SUPPLY21" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="5VDC" gate="G$1" pin="2"/>
 <pinref part="SUPPLY29" gate="GND" pin="GND"/>
 <wire x1="99.06" y1="137.16" x2="78.74" y2="137.16" width="0.1524" layer="91"/>
+<pinref part="X3" gate="-2" pin="S"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -14631,9 +14632,9 @@ Source: www.kingbright.com</description>
 <junction x="233.68" y="35.56"/>
 </segment>
 <segment>
-<pinref part="5VDC" gate="G$1" pin="1"/>
 <pinref part="SUPPLY28" gate="+5V" pin="+5V"/>
 <wire x1="99.06" y1="139.7" x2="88.9" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="X3" gate="-1" pin="S"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -14687,7 +14688,7 @@ Source: www.kingbright.com</description>
 <pinref part="OK1" gate="G$1" pin="C"/>
 <pinref part="D1" gate="G$1" pin="A"/>
 <pinref part="X1" gate="G$1" pin="5"/>
-<pinref part="MIDIIN" gate="G$1" pin="1"/>
+<pinref part="MIDI-IN" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$13" class="0">
@@ -14711,7 +14712,7 @@ Source: www.kingbright.com</description>
 <wire x1="276.86" y1="58.42" x2="276.86" y2="53.34" width="0.1524" layer="91"/>
 <junction x="276.86" y="53.34"/>
 <pinref part="R9" gate="G$1" pin="2"/>
-<pinref part="MIDIIN" gate="G$1" pin="2"/>
+<pinref part="MIDI-IN" gate="G$1" pin="2"/>
 <pinref part="X1" gate="G$1" pin="4"/>
 </segment>
 </net>
@@ -14782,7 +14783,7 @@ Source: www.kingbright.com</description>
 <junction x="182.88" y="139.7"/>
 <pinref part="IC1" gate="G$1" pin="PD1(TXD)"/>
 <pinref part="X2" gate="G$1" pin="5"/>
-<pinref part="MIDIOUT" gate="A" pin="1"/>
+<pinref part="MIDI-OUT" gate="A" pin="1"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -14819,7 +14820,7 @@ Source: www.kingbright.com</description>
 <wire x1="208.28" y1="99.06" x2="208.28" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="210.82" y1="99.06" x2="208.28" y2="99.06" width="0.1524" layer="91"/>
 <junction x="208.28" y="99.06"/>
-<pinref part="MIDIOUT" gate="A" pin="3"/>
+<pinref part="MIDI-OUT" gate="A" pin="3"/>
 <pinref part="X2" gate="G$1" pin="4"/>
 <pinref part="R10" gate="G$1" pin="2"/>
 </segment>
@@ -14910,7 +14911,7 @@ Source: www.kingbright.com</description>
 </net>
 <net name="N$43" class="0">
 <segment>
-<pinref part="MIDIOUT" gate="A" pin="2"/>
+<pinref part="MIDI-OUT" gate="A" pin="2"/>
 <wire x1="236.22" y1="119.38" x2="203.2" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="203.2" y1="119.38" x2="203.2" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="203.2" y1="101.6" x2="180.34" y2="101.6" width="0.1524" layer="91"/>
