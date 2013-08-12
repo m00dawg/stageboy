@@ -116,16 +116,16 @@
 <wire x1="0" y1="73" x2="120" y2="73" width="0" layer="25" style="shortdash"/>
 <text x="47.5" y="59.75" size="1.6764" layer="16" font="vector" ratio="15" rot="MR270">StageBoy v1.00
 By Tim Soderstrom</text>
-<text x="20.5" y="4.75" size="1.27" layer="25" font="vector">StageBoy v1.00</text>
-<text x="20.5" y="3" size="1.016" layer="25" font="vector">By Tim Soderstrom</text>
-<text x="48.25" y="17.25" size="1.016" layer="25" font="vector">Based on ArduinoBoy By Trash80
+<text x="23.75" y="5" size="1.27" layer="25" font="vector">StageBoy v1.00</text>
+<text x="23.75" y="3.25" size="1.016" layer="25" font="vector">By Tim Soderstrom</text>
+<text x="48.5" y="17.25" size="1.016" layer="25" font="vector">Based on ArduinoBoy By Trash80
 And PISS Box By egr
 </text>
-<text x="3.25" y="2.75" size="1.778" layer="25">IN</text>
-<text x="1" y="46" size="1.778" layer="25">OUT</text>
-<text x="106.75" y="59" size="1.778" layer="25" rot="R90">STEREO IN</text>
-<text x="20.25" y="71.75" size="1.778" layer="25" rot="R180">BALANCED OUT</text>
+<text x="106.5" y="58.5" size="1.778" layer="25" rot="R90">STEREO IN</text>
+<text x="28.5" y="71.75" size="1.778" layer="25" rot="R180">MONO BALANCED OUT</text>
 <text x="105" y="22.25" size="1.778" layer="25">1</text>
+<text x="50.75" y="36" size="1.778" layer="25" rot="R90">EDCOR PCW Series</text>
+<text x="60" y="13.75" size="1.778" layer="25">+</text>
 </plain>
 <libraries>
 <library name="atmel">
@@ -1129,7 +1129,7 @@ Please make sure your boards conform to these design rules.</description>
 </element>
 <element name="B1" library="rectifier" package="RB1A" value="B1" x="87" y="8"/>
 <element name="C7" library="resistor" package="E3,5-10" value="2200uF" x="75.5" y="8"/>
-<element name="C8" library="rcl" package="C025-025X050" value="330nF" x="63" y="5.5" rot="R90"/>
+<element name="C8" library="rcl" package="C025-025X050" value="330nF" x="63.5" y="5.5" rot="R90"/>
 <element name="OUT" library="Neutrik" package="NMJ6HFD2" value="NMJ6HFD2" x="24.75" y="59" rot="R90"/>
 <element name="GNDLFT" library="jumper" package="JP1" value="GNDLIFT" x="24" y="27" smashed="yes" rot="R180">
 <attribute name="NAME" x="26.151" y="30.54" size="1.27" layer="25" ratio="10" rot="R270"/>
@@ -1156,6 +1156,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="LED2" library="led" package="LED3MM" value="" x="117" y="27.25" rot="R90"/>
 <element name="R4" library="resistor" package="0204/7" value="220" x="109.25" y="18.25" rot="R180"/>
 <element name="R5" library="resistor" package="0204/7" value="220" x="109.25" y="21.75" rot="R180"/>
+<element name="5VDC" library="pinhead" package="1X02" value="DCPWR" x="63.5" y="13" rot="R270"/>
 </elements>
 <signals>
 <signal name="PE">
@@ -1191,8 +1192,8 @@ Please make sure your boards conform to these design rules.</description>
 <vertex x="121.25" y="53"/>
 <vertex x="70.75" y="53"/>
 <vertex x="70.75" y="29.25"/>
-<vertex x="23.25" y="29.25"/>
-<vertex x="23.25" y="1.25"/>
+<vertex x="22.25" y="29.25"/>
+<vertex x="22.25" y="1.25"/>
 <vertex x="121.25" y="1.25"/>
 </polygon>
 <contactref element="ISP" pad="6"/>
@@ -1202,6 +1203,7 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="R3" pad="1"/>
 <contactref element="LED1" pad="K"/>
 <contactref element="LED2" pad="K"/>
+<contactref element="5VDC" pad="2"/>
 </signal>
 <signal name="+5V">
 <contactref element="R10" pad="1"/>
@@ -1215,7 +1217,7 @@ Please make sure your boards conform to these design rules.</description>
 <vertex x="71.75" y="28"/>
 <vertex x="62.25" y="22.5"/>
 <vertex x="22" y="22.5"/>
-<vertex x="23.25" y="2"/>
+<vertex x="22" y="2"/>
 <vertex x="54.25" y="2"/>
 <vertex x="54.25" y="13.25"/>
 <vertex x="120.75" y="13.25"/>
@@ -1228,6 +1230,7 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="SW1" pad="6"/>
 <contactref element="SW1" pad="4"/>
 <contactref element="SW1" pad="5"/>
+<contactref element="5VDC" pad="1"/>
 </signal>
 <signal name="N$2">
 <contactref element="IC1" pad="21"/>
@@ -1413,7 +1416,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="98.25" y1="54" x2="112.25" y2="54" width="0.4064" layer="1"/>
 <wire x1="106.67" y1="35.38" x2="106.88" y2="35.38" width="0.4064" layer="1"/>
 <wire x1="106.88" y1="35.38" x2="114.5" y2="43" width="0.4064" layer="1"/>
-<wire x1="112.25" y1="54" x2="114.5" y2="51.75" width="0.4064" layer="1"/>
+<wire x1="114.5" y1="51.75" x2="112.25" y2="54" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$25">
 <contactref element="IC1" pad="24"/>
@@ -1423,8 +1426,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="107" y1="52.75" x2="98.25" y2="52.75" width="0.4064" layer="1"/>
 <wire x1="98.25" y1="52.75" x2="92.35" y2="46.85" width="0.4064" layer="1"/>
 <wire x1="91.06" y1="46.85" x2="92.35" y2="46.85" width="0.4064" layer="1"/>
-<wire x1="109.75" y1="41" x2="109.75" y2="49.75" width="0.4064" layer="1"/>
-<wire x1="109.75" y1="49.75" x2="107" y2="52.75" width="0.4064" layer="1"/>
+<wire x1="109.75" y1="41" x2="109.75" y2="50" width="0.4064" layer="1"/>
+<wire x1="109.75" y1="50" x2="107" y2="52.75" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$26">
 <contactref element="IC1" pad="23"/>
@@ -1451,7 +1454,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="73.722" y1="8" x2="73.722" y2="7.972" width="1.016" layer="1"/>
 <wire x1="73.722" y1="7.972" x2="70" y2="4.25" width="1.016" layer="1"/>
 <wire x1="70" y1="4.25" x2="63.02" y2="4.25" width="1.016" layer="1"/>
-<wire x1="63.02" y1="4.25" x2="63" y2="4.23" width="1.016" layer="1"/>
+<wire x1="63.02" y1="4.25" x2="63.5" y2="4.23" width="1.016" layer="1"/>
 <wire x1="63.02" y1="4.25" x2="58.83" y2="4.25" width="1.016" layer="1"/>
 <wire x1="58.83" y1="4.25" x2="58.04" y2="5.04" width="1.016" layer="1"/>
 </signal>

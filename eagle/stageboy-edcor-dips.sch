@@ -14391,6 +14391,9 @@ Source: www.kingbright.com</description>
 <part name="SUPPLY21" library="supply2" deviceset="GND" device=""/>
 <part name="R4" library="resistor" deviceset="R-US_" device="0204/7" value="220"/>
 <part name="R5" library="resistor" deviceset="R-US_" device="0204/7" value="220"/>
+<part name="5VDC" library="pinhead" deviceset="PINHD-1X2" device="" value="DCPWR"/>
+<part name="SUPPLY28" library="supply2" deviceset="+5V" device=""/>
+<part name="SUPPLY29" library="supply2" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -14468,6 +14471,9 @@ Source: www.kingbright.com</description>
 <instance part="SUPPLY21" gate="GND" x="154.94" y="12.7"/>
 <instance part="R4" gate="G$1" x="157.48" y="27.94" rot="R180"/>
 <instance part="R5" gate="G$1" x="147.32" y="25.4" rot="R180"/>
+<instance part="5VDC" gate="G$1" x="101.6" y="137.16"/>
+<instance part="SUPPLY28" gate="+5V" x="86.36" y="139.7" rot="R90"/>
+<instance part="SUPPLY29" gate="GND" x="76.2" y="137.16" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -14562,6 +14568,11 @@ Source: www.kingbright.com</description>
 <pinref part="LED2" gate="G$1" pin="C"/>
 <pinref part="SUPPLY21" gate="GND" pin="GND"/>
 </segment>
+<segment>
+<pinref part="5VDC" gate="G$1" pin="2"/>
+<pinref part="SUPPLY29" gate="GND" pin="GND"/>
+<wire x1="99.06" y1="137.16" x2="78.74" y2="137.16" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+5V" class="0">
 <segment>
@@ -14618,6 +14629,11 @@ Source: www.kingbright.com</description>
 <wire x1="231.14" y1="33.02" x2="233.68" y2="33.02" width="0.1524" layer="91"/>
 <junction x="233.68" y="33.02"/>
 <junction x="233.68" y="35.56"/>
+</segment>
+<segment>
+<pinref part="5VDC" gate="G$1" pin="1"/>
+<pinref part="SUPPLY28" gate="+5V" pin="+5V"/>
+<wire x1="99.06" y1="139.7" x2="88.9" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
