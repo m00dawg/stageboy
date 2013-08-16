@@ -12136,9 +12136,9 @@ Phone Connectors&lt;br&gt;
 Cinch Connectors&lt;br&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="DCJ0303">
-<description>&lt;b&gt;DC POWER JACK&lt;/b&gt; Pad shape changed to LONG 2007.07.26&lt;p&gt;
-Source: DCJ0303.pdf</description>
+<package name="DCJ0202">
+<description>&lt;b&gt;DC POWER JACK&lt;/b&gt;&lt;p&gt;
+Source: DCJ0202.pdf</description>
 <wire x1="1.65" y1="2.6" x2="-1.65" y2="2.6" width="0" layer="46"/>
 <wire x1="-1.65" y1="2.6" x2="-1.65" y2="3.6" width="0" layer="46"/>
 <wire x1="-1.65" y1="3.6" x2="1.65" y2="3.6" width="0" layer="46"/>
@@ -12168,7 +12168,7 @@ Source: DCJ0303.pdf</description>
 <pad name="1" x="0" y="3.1" drill="1" diameter="2" shape="long" rot="R180"/>
 <pad name="3" x="0" y="-3" drill="1" diameter="2" shape="long" rot="R180"/>
 <pad name="2" x="4.8" y="0" drill="1" diameter="2" shape="long" rot="R90"/>
-<text x="6.35" y="-10.16" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="-3.81" y="5.08" size="1.27" layer="25">&gt;NAME</text>
 <text x="-5.08" y="-10.16" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
 </package>
 </packages>
@@ -12196,14 +12196,14 @@ Source: DCJ0303.pdf</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="DCJ0303" prefix="J" uservalue="yes">
+<deviceset name="DCJ0202" prefix="J">
 <description>&lt;b&gt;DC POWER JACK&lt;/b&gt;&lt;p&gt;
-Source: DCJ0303.pdf</description>
+Source: DCJ0202.pdf</description>
 <gates>
 <gate name="G$1" symbol="DC-JACK-SWITCH" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="DCJ0303">
+<device name="" package="DCJ0202">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
@@ -14361,7 +14361,6 @@ Source: www.kingbright.com</description>
 <part name="C5" library="rcl" deviceset="C-US" device="025-025X050" value="100nF"/>
 <part name="SUPPLY6" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="supply2" deviceset="GND" device=""/>
-<part name="J1" library="con-jack" deviceset="DCJ0303" device="" value="PWR"/>
 <part name="B1" library="rectifier" deviceset="RB1A" device="" value="B1"/>
 <part name="C7" library="resistor" deviceset="CPOL-US" device="E3.5-10" value="2200uF"/>
 <part name="C8" library="rcl" deviceset="C-US" device="025-025X050" value="330nF"/>
@@ -14385,15 +14384,13 @@ Source: www.kingbright.com</description>
 <part name="SUPPLY11" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY23" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY25" library="supply2" deviceset="+5V" device=""/>
-<part name="LED1" library="led" deviceset="LED" device="3MM"/>
 <part name="LED2" library="led" deviceset="LED" device="3MM"/>
-<part name="SUPPLY14" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY21" library="supply2" deviceset="GND" device=""/>
-<part name="R4" library="resistor" deviceset="R-US_" device="0204/7" value="220"/>
 <part name="R5" library="resistor" deviceset="R-US_" device="0204/7" value="220"/>
 <part name="SUPPLY28" library="supply2" deviceset="+5V" device=""/>
 <part name="SUPPLY29" library="supply2" deviceset="GND" device=""/>
 <part name="X3" library="con-molex" deviceset="22-23-2021" device="" value="DCPWR"/>
+<part name="J2" library="con-jack" deviceset="DCJ0202" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -14441,7 +14438,6 @@ Source: www.kingbright.com</description>
 <instance part="C5" gate="G$1" x="73.66" y="119.38"/>
 <instance part="SUPPLY6" gate="GND" x="73.66" y="111.76"/>
 <instance part="SUPPLY7" gate="GND" x="48.26" y="114.3"/>
-<instance part="J1" gate="G$1" x="-15.24" y="114.3" rot="MR180"/>
 <instance part="B1" gate="1" x="7.62" y="114.3" rot="R180"/>
 <instance part="C7" gate="G$1" x="22.86" y="119.38"/>
 <instance part="C8" gate="G$1" x="33.02" y="119.38"/>
@@ -14465,16 +14461,14 @@ Source: www.kingbright.com</description>
 <instance part="SUPPLY11" gate="GND" x="198.12" y="10.16"/>
 <instance part="SUPPLY23" gate="GND" x="205.74" y="10.16"/>
 <instance part="SUPPLY25" gate="+5V" x="241.3" y="35.56" rot="R270"/>
-<instance part="LED1" gate="G$1" x="165.1" y="20.32"/>
 <instance part="LED2" gate="G$1" x="154.94" y="20.32"/>
-<instance part="SUPPLY14" gate="GND" x="165.1" y="12.7"/>
 <instance part="SUPPLY21" gate="GND" x="154.94" y="12.7"/>
-<instance part="R4" gate="G$1" x="157.48" y="27.94" rot="R180"/>
 <instance part="R5" gate="G$1" x="147.32" y="25.4" rot="R180"/>
 <instance part="SUPPLY28" gate="+5V" x="86.36" y="139.7" rot="R90"/>
 <instance part="SUPPLY29" gate="GND" x="76.2" y="137.16" rot="R270"/>
 <instance part="X3" gate="-1" x="101.6" y="139.7"/>
 <instance part="X3" gate="-2" x="101.6" y="137.16"/>
+<instance part="J2" gate="G$1" x="-17.78" y="114.3"/>
 </instances>
 <busses>
 </busses>
@@ -14560,10 +14554,6 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="R3" gate="G$1" pin="1"/>
 <pinref part="SUPPLY23" gate="GND" pin="GND"/>
-</segment>
-<segment>
-<pinref part="LED1" gate="G$1" pin="C"/>
-<pinref part="SUPPLY14" gate="GND" pin="GND"/>
 </segment>
 <segment>
 <pinref part="LED2" gate="G$1" pin="C"/>
@@ -14745,9 +14735,6 @@ Source: www.kingbright.com</description>
 <pinref part="ISP" gate="A" pin="4"/>
 <wire x1="134.62" y1="5.08" x2="139.7" y2="5.08" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="5.08" x2="139.7" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="152.4" y1="27.94" x2="139.7" y2="27.94" width="0.1524" layer="91"/>
-<junction x="139.7" y="27.94"/>
 </segment>
 </net>
 <net name="N$18" class="0">
@@ -14888,18 +14875,18 @@ Source: www.kingbright.com</description>
 <pinref part="B1" gate="1" pin="AC2"/>
 <wire x1="7.62" y1="119.38" x2="7.62" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="121.92" x2="-2.54" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="-2.54" y1="121.92" x2="-2.54" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="3"/>
-<wire x1="-2.54" y1="116.84" x2="-7.62" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="121.92" x2="-2.54" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="X4" gate="-1" pin="S"/>
 <wire x1="-7.62" y1="121.92" x2="-2.54" y2="121.92" width="0.1524" layer="91"/>
 <junction x="-2.54" y="121.92"/>
+<wire x1="-2.54" y1="114.3" x2="-7.62" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="114.3" x2="-7.62" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="J2" gate="G$1" pin="3"/>
+<wire x1="-7.62" y1="111.76" x2="-10.16" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$39" class="0">
 <segment>
-<pinref part="J1" gate="G$1" pin="1"/>
-<wire x1="-7.62" y1="111.76" x2="-2.54" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="-2.54" y1="111.76" x2="-2.54" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="B1" gate="1" pin="AC1"/>
 <wire x1="-2.54" y1="106.68" x2="7.62" y2="106.68" width="0.1524" layer="91"/>
@@ -14907,6 +14894,10 @@ Source: www.kingbright.com</description>
 <pinref part="X4" gate="-2" pin="S"/>
 <wire x1="-7.62" y1="106.68" x2="-2.54" y2="106.68" width="0.1524" layer="91"/>
 <junction x="-2.54" y="106.68"/>
+<pinref part="J2" gate="G$1" pin="1"/>
+<wire x1="-10.16" y1="116.84" x2="-5.08" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="116.84" x2="-5.08" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="111.76" x2="-2.54" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$43" class="0">
@@ -14992,14 +14983,6 @@ Source: www.kingbright.com</description>
 <pinref part="LED2" gate="G$1" pin="A"/>
 <wire x1="152.4" y1="25.4" x2="154.94" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="25.4" x2="154.94" y2="22.86" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$5" class="0">
-<segment>
-<pinref part="R4" gate="G$1" pin="1"/>
-<pinref part="LED1" gate="G$1" pin="A"/>
-<wire x1="162.56" y1="27.94" x2="165.1" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="27.94" x2="165.1" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
