@@ -14337,11 +14337,11 @@ Source: www.kingbright.com</description>
 <part name="R3" library="resistor" deviceset="R-US_" device="0204/7" value="10k"/>
 <part name="OK1" library="optocoupler" deviceset="6N138" device=""/>
 <part name="SUPPLY8" library="supply2" deviceset="GND" device=""/>
-<part name="R8" library="resistor" deviceset="R-US_" device="0204/7" value="R8"/>
+<part name="R8" library="resistor" deviceset="R-US_" device="0204/7" value="270"/>
 <part name="D1" library="diode" deviceset="1N4148" device="DO35-7"/>
 <part name="X1" library="con-hirschmann" deviceset="MAB5SH" device="" value="MIDI IN"/>
-<part name="R9" library="resistor" deviceset="R-US_" device="0204/7" value="R9"/>
-<part name="R10" library="resistor" deviceset="R-US_" device="0204/7" value="R10"/>
+<part name="R9" library="resistor" deviceset="R-US_" device="0204/7" value="220"/>
+<part name="R10" library="resistor" deviceset="R-US_" device="0204/7" value="220"/>
 <part name="Q1" library="crystal" deviceset="CRYSTAL" device="HC49S" value="16MHz"/>
 <part name="SUPPLY17" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY18" library="supply2" deviceset="GND" device=""/>
@@ -14384,12 +14384,12 @@ Source: www.kingbright.com</description>
 <part name="SUPPLY11" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY23" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY25" library="supply2" deviceset="+5V" device=""/>
-<part name="LED2" library="led" deviceset="LED" device="3MM"/>
+<part name="LED" library="led" deviceset="LED" device="3MM"/>
 <part name="SUPPLY21" library="supply2" deviceset="GND" device=""/>
 <part name="R5" library="resistor" deviceset="R-US_" device="0204/7" value="220"/>
 <part name="SUPPLY28" library="supply2" deviceset="+5V" device=""/>
 <part name="SUPPLY29" library="supply2" deviceset="GND" device=""/>
-<part name="X3" library="con-molex" deviceset="22-23-2021" device="" value="DCPWR"/>
+<part name="5VDC" library="con-molex" deviceset="22-23-2021" device="" value="DCPWR"/>
 <part name="J2" library="con-jack" deviceset="DCJ0202" device=""/>
 </parts>
 <sheets>
@@ -14461,13 +14461,13 @@ Source: www.kingbright.com</description>
 <instance part="SUPPLY11" gate="GND" x="198.12" y="10.16"/>
 <instance part="SUPPLY23" gate="GND" x="205.74" y="10.16"/>
 <instance part="SUPPLY25" gate="+5V" x="241.3" y="35.56" rot="R270"/>
-<instance part="LED2" gate="G$1" x="154.94" y="20.32"/>
+<instance part="LED" gate="G$1" x="154.94" y="20.32"/>
 <instance part="SUPPLY21" gate="GND" x="154.94" y="12.7"/>
 <instance part="R5" gate="G$1" x="147.32" y="25.4" rot="R180"/>
 <instance part="SUPPLY28" gate="+5V" x="86.36" y="139.7" rot="R90"/>
 <instance part="SUPPLY29" gate="GND" x="76.2" y="137.16" rot="R270"/>
-<instance part="X3" gate="-1" x="101.6" y="139.7"/>
-<instance part="X3" gate="-2" x="101.6" y="137.16"/>
+<instance part="5VDC" gate="-1" x="101.6" y="139.7"/>
+<instance part="5VDC" gate="-2" x="101.6" y="137.16"/>
 <instance part="J2" gate="G$1" x="-17.78" y="114.3"/>
 </instances>
 <busses>
@@ -14556,13 +14556,13 @@ Source: www.kingbright.com</description>
 <pinref part="SUPPLY23" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="LED2" gate="G$1" pin="C"/>
+<pinref part="LED" gate="G$1" pin="C"/>
 <pinref part="SUPPLY21" gate="GND" pin="GND"/>
 </segment>
 <segment>
 <pinref part="SUPPLY29" gate="GND" pin="GND"/>
 <wire x1="99.06" y1="137.16" x2="78.74" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="X3" gate="-2" pin="S"/>
+<pinref part="5VDC" gate="-2" pin="S"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -14624,7 +14624,7 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="SUPPLY28" gate="+5V" pin="+5V"/>
 <wire x1="99.06" y1="139.7" x2="88.9" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="X3" gate="-1" pin="S"/>
+<pinref part="5VDC" gate="-1" pin="S"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -14980,7 +14980,7 @@ Source: www.kingbright.com</description>
 <net name="N$3" class="0">
 <segment>
 <pinref part="R5" gate="G$1" pin="1"/>
-<pinref part="LED2" gate="G$1" pin="A"/>
+<pinref part="LED" gate="G$1" pin="A"/>
 <wire x1="152.4" y1="25.4" x2="154.94" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="25.4" x2="154.94" y2="22.86" width="0.1524" layer="91"/>
 </segment>
