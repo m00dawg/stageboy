@@ -14481,9 +14481,6 @@ Mating wall wart : TOL-00298 (and others)</description>
 <part name="SUPPLY4" library="supply2" deviceset="GND" device=""/>
 <part name="C2" library="rcl" deviceset="C-US" device="025-025X050" value="100nF"/>
 <part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
-<part name="R1" library="resistor" deviceset="R-US_" device="0204/7" value="10k"/>
-<part name="R2" library="resistor" deviceset="R-US_" device="0204/7" value="10k"/>
-<part name="R3" library="resistor" deviceset="R-US_" device="0204/7" value="10k"/>
 <part name="OK1" library="optocoupler" deviceset="6N138" device=""/>
 <part name="SUPPLY8" library="supply2" deviceset="GND" device=""/>
 <part name="R8" library="resistor" deviceset="R-US_" device="0204/7" value="270"/>
@@ -14529,10 +14526,6 @@ Mating wall wart : TOL-00298 (and others)</description>
 <part name="SUPPLY30" library="supply2" deviceset="GND" device=""/>
 <part name="U$1" library="EDCOR" deviceset="EDCOR-PC600/600" device=""/>
 <part name="SW1" library="special" deviceset="SW_DIP-3" device=""/>
-<part name="SUPPLY10" library="supply2" deviceset="GND" device=""/>
-<part name="SUPPLY11" library="supply2" deviceset="GND" device=""/>
-<part name="SUPPLY23" library="supply2" deviceset="GND" device=""/>
-<part name="SUPPLY25" library="supply2" deviceset="+5V" device=""/>
 <part name="LED" library="led" deviceset="LED" device="3MM"/>
 <part name="SUPPLY21" library="supply2" deviceset="GND" device=""/>
 <part name="R5" library="resistor" deviceset="R-US_" device="0204/7" value="220"/>
@@ -14540,6 +14533,7 @@ Mating wall wart : TOL-00298 (and others)</description>
 <part name="SUPPLY29" library="supply2" deviceset="GND" device=""/>
 <part name="5VDC" library="con-molex" deviceset="22-23-2021" device="" value="DCPWR"/>
 <part name="J1" library="SparkFun-Connectors" deviceset="POWER_JACK" device="PTH"/>
+<part name="SUPPLY10" library="supply2" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -14547,6 +14541,8 @@ Mating wall wart : TOL-00298 (and others)</description>
 <text x="241.3" y="116.84" size="1.778" layer="91">5V</text>
 <text x="241.3" y="121.92" size="1.778" layer="91">OUT</text>
 <text x="119.38" y="50.8" size="1.778" layer="97">Button Pin</text>
+<text x="177.8" y="17.78" size="1.778" layer="97">Removed Resistors
+(Using Pull-Up Internal Ones On AVR)</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="91.44" y="53.34"/>
@@ -14557,9 +14553,6 @@ Mating wall wart : TOL-00298 (and others)</description>
 <instance part="SUPPLY4" gate="GND" x="66.04" y="76.2" rot="R270"/>
 <instance part="C2" gate="G$1" x="55.88" y="91.44"/>
 <instance part="SUPPLY5" gate="GND" x="55.88" y="96.52" rot="R180"/>
-<instance part="R1" gate="G$1" x="190.5" y="17.78" rot="R90"/>
-<instance part="R2" gate="G$1" x="198.12" y="17.78" rot="R90"/>
-<instance part="R3" gate="G$1" x="205.74" y="17.78" rot="R90"/>
 <instance part="OK1" gate="G$1" x="210.82" y="76.2" rot="R180"/>
 <instance part="SUPPLY8" gate="GND" x="195.58" y="81.28" rot="R270"/>
 <instance part="R8" gate="G$1" x="175.26" y="50.8" rot="R270"/>
@@ -14605,11 +14598,7 @@ Mating wall wart : TOL-00298 (and others)</description>
 <instance part="C9" gate="G$1" x="10.16" y="71.12" rot="R270"/>
 <instance part="SUPPLY30" gate="GND" x="2.54" y="71.12" rot="R270"/>
 <instance part="U$1" gate="G$1" x="71.12" y="205.74"/>
-<instance part="SW1" gate="A" x="223.52" y="33.02" rot="R180"/>
-<instance part="SUPPLY10" gate="GND" x="190.5" y="10.16"/>
-<instance part="SUPPLY11" gate="GND" x="198.12" y="10.16"/>
-<instance part="SUPPLY23" gate="GND" x="205.74" y="10.16"/>
-<instance part="SUPPLY25" gate="+5V" x="241.3" y="35.56" rot="R270"/>
+<instance part="SW1" gate="A" x="187.96" y="33.02"/>
 <instance part="LED" gate="G$1" x="154.94" y="20.32"/>
 <instance part="SUPPLY21" gate="GND" x="154.94" y="12.7"/>
 <instance part="R5" gate="G$1" x="147.32" y="25.4" rot="R180"/>
@@ -14618,6 +14607,7 @@ Mating wall wart : TOL-00298 (and others)</description>
 <instance part="5VDC" gate="-1" x="101.6" y="139.7"/>
 <instance part="5VDC" gate="-2" x="101.6" y="137.16"/>
 <instance part="J1" gate="G$1" x="-12.7" y="109.22"/>
+<instance part="SUPPLY10" gate="GND" x="203.2" y="35.56" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -14693,18 +14683,6 @@ Mating wall wart : TOL-00298 (and others)</description>
 <pinref part="SUPPLY30" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="R1" gate="G$1" pin="1"/>
-<pinref part="SUPPLY10" gate="GND" pin="GND"/>
-</segment>
-<segment>
-<pinref part="R2" gate="G$1" pin="1"/>
-<pinref part="SUPPLY11" gate="GND" pin="GND"/>
-</segment>
-<segment>
-<pinref part="R3" gate="G$1" pin="1"/>
-<pinref part="SUPPLY23" gate="GND" pin="GND"/>
-</segment>
-<segment>
 <pinref part="LED" gate="G$1" pin="C"/>
 <pinref part="SUPPLY21" gate="GND" pin="GND"/>
 </segment>
@@ -14712,6 +14690,20 @@ Mating wall wart : TOL-00298 (and others)</description>
 <pinref part="SUPPLY29" gate="GND" pin="GND"/>
 <wire x1="99.06" y1="137.16" x2="78.74" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="5VDC" gate="-2" pin="S"/>
+</segment>
+<segment>
+<pinref part="SUPPLY10" gate="GND" pin="GND"/>
+<pinref part="SW1" gate="A" pin="3"/>
+<wire x1="200.66" y1="35.56" x2="198.12" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="A" pin="2"/>
+<wire x1="198.12" y1="35.56" x2="195.58" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="33.02" x2="198.12" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="33.02" x2="198.12" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="A" pin="1"/>
+<wire x1="195.58" y1="30.48" x2="198.12" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="30.48" x2="198.12" y2="33.02" width="0.1524" layer="91"/>
+<junction x="198.12" y="33.02"/>
+<junction x="198.12" y="35.56"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -14755,20 +14747,6 @@ Mating wall wart : TOL-00298 (and others)</description>
 <wire x1="12.7" y1="71.12" x2="20.32" y2="71.12" width="0.1524" layer="91"/>
 <junction x="20.32" y="71.12"/>
 <pinref part="SUPPLY3" gate="+5V" pin="+5V"/>
-</segment>
-<segment>
-<pinref part="SW1" gate="A" pin="6"/>
-<pinref part="SUPPLY25" gate="+5V" pin="+5V"/>
-<wire x1="238.76" y1="35.56" x2="233.68" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="SW1" gate="A" pin="4"/>
-<wire x1="233.68" y1="35.56" x2="231.14" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="231.14" y1="30.48" x2="233.68" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="233.68" y1="30.48" x2="233.68" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="SW1" gate="A" pin="5"/>
-<wire x1="233.68" y1="33.02" x2="233.68" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="231.14" y1="33.02" x2="233.68" y2="33.02" width="0.1524" layer="91"/>
-<junction x="233.68" y="33.02"/>
-<junction x="233.68" y="35.56"/>
 </segment>
 <segment>
 <pinref part="SUPPLY28" gate="+5V" pin="+5V"/>
@@ -14853,28 +14831,6 @@ Mating wall wart : TOL-00298 (and others)</description>
 <pinref part="R9" gate="G$1" pin="2"/>
 <pinref part="MIDI-IN" gate="G$1" pin="2"/>
 <pinref part="X1" gate="G$1" pin="4"/>
-</segment>
-</net>
-<net name="N$14" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="PB1(OC1A)"/>
-<pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="116.84" y1="33.02" x2="198.12" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="198.12" y1="33.02" x2="198.12" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="SW1" gate="A" pin="2"/>
-<wire x1="215.9" y1="33.02" x2="198.12" y2="33.02" width="0.1524" layer="91"/>
-<junction x="198.12" y="33.02"/>
-</segment>
-</net>
-<net name="N$15" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="PB2(SS/OC1B)"/>
-<pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="116.84" y1="30.48" x2="205.74" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="205.74" y1="30.48" x2="205.74" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="SW1" gate="A" pin="3"/>
-<wire x1="215.9" y1="30.48" x2="205.74" y2="30.48" width="0.1524" layer="91"/>
-<junction x="205.74" y="30.48"/>
 </segment>
 </net>
 <net name="N$17" class="0">
@@ -14989,17 +14945,6 @@ Mating wall wart : TOL-00298 (and others)</description>
 <pinref part="X6" gate="G$1" pin="1"/>
 <wire x1="139.7" y1="104.14" x2="154.94" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="104.14" x2="154.94" y2="101.6" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="PB0(ICP)"/>
-<pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="190.5" y1="22.86" x2="190.5" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="190.5" y1="35.56" x2="116.84" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="SW1" gate="A" pin="1"/>
-<wire x1="215.9" y1="35.56" x2="190.5" y2="35.56" width="0.1524" layer="91"/>
-<junction x="190.5" y="35.56"/>
 </segment>
 </net>
 <net name="N$28" class="0">
@@ -15134,6 +15079,27 @@ Mating wall wart : TOL-00298 (and others)</description>
 <wire x1="154.94" y1="25.4" x2="154.94" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="PB0(ICP)"/>
+<pinref part="SW1" gate="A" pin="4"/>
+<wire x1="116.84" y1="35.56" x2="180.34" y2="35.56" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="SW1" gate="A" pin="5"/>
+<pinref part="IC1" gate="G$1" pin="PB1(OC1A)"/>
+<wire x1="180.34" y1="33.02" x2="116.84" y2="33.02" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="PB2(SS/OC1B)"/>
+<pinref part="SW1" gate="A" pin="6"/>
+<wire x1="116.84" y1="30.48" x2="180.34" y2="30.48" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -15149,4 +15115,10 @@ Mating wall wart : TOL-00298 (and others)</description>
 </errors>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
