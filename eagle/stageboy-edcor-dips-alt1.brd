@@ -1301,7 +1301,7 @@ Please make sure your boards conform to these design rules.</description>
 <vertex x="28.25" y="32"/>
 <vertex x="15" y="45.25"/>
 <vertex x="0.25" y="45.25"/>
-<vertex x="0.25" y="3.25"/>
+<vertex x="0.25" y="3"/>
 <vertex x="54.25" y="3"/>
 <vertex x="54.25" y="12.75"/>
 <vertex x="120" y="12.75"/>
