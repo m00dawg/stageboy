@@ -10352,6 +10352,15 @@ high speed (Philips)</description>
 <rectangle x1="-5.715" y1="-1.27" x2="-5.08" y2="1.27" layer="43"/>
 <rectangle x1="4.445" y1="-1.905" x2="5.08" y2="1.905" layer="43"/>
 <rectangle x1="5.08" y1="-1.27" x2="5.715" y2="1.27" layer="43"/>
+<rectangle x1="-4.445" y1="-2.54" x2="4.445" y2="-0.9525" layer="41"/>
+<rectangle x1="-4.445" y1="0.9525" x2="4.445" y2="2.54" layer="41"/>
+<rectangle x1="3.4925" y1="-0.9525" x2="4.445" y2="0.9525" layer="41"/>
+<rectangle x1="-1.5875" y1="-0.9525" x2="1.5875" y2="0.9525" layer="41"/>
+<rectangle x1="-4.445" y1="-0.9525" x2="-3.4925" y2="0.9525" layer="41"/>
+<rectangle x1="4.445" y1="-1.905" x2="5.08" y2="1.905" layer="41"/>
+<rectangle x1="5.08" y1="-1.27" x2="5.715" y2="1.27" layer="41"/>
+<rectangle x1="-5.08" y1="-1.905" x2="-4.445" y2="1.905" layer="41"/>
+<rectangle x1="-5.715" y1="-1.27" x2="-5.08" y2="1.27" layer="41"/>
 </package>
 <package name="HC49GW">
 <description>&lt;b&gt;CRYSTAL&lt;/b&gt;</description>
