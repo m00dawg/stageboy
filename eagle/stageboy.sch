@@ -12238,9 +12238,9 @@ NMJ6HFD2</description>
 <wire x1="-8.4" y1="4" x2="8.2" y2="4" width="0.127" layer="21"/>
 <wire x1="-8.4" y1="4" x2="-8.4" y2="0" width="0.127" layer="21"/>
 <wire x1="8.2" y1="4" x2="8.2" y2="0" width="0.127" layer="21"/>
-<wire x1="-5.1" y1="24" x2="-5.1" y2="33" width="0.127" layer="21"/>
-<wire x1="-5.1" y1="33" x2="5.1" y2="33" width="0.127" layer="21"/>
-<wire x1="5.1" y1="33" x2="5.1" y2="24" width="0.127" layer="21"/>
+<wire x1="-5.1" y1="24" x2="-5.1" y2="33" width="0.127" layer="51"/>
+<wire x1="-5.1" y1="33" x2="5.1" y2="33" width="0.127" layer="51"/>
+<wire x1="5.1" y1="33" x2="5.1" y2="24" width="0.127" layer="51"/>
 <pad name="LEFT-IN" x="-8.4" y="7" drill="1.5" shape="long" rot="R180"/>
 <pad name="RIGHT-IN" x="-8.4" y="13.3" drill="1.5" shape="long" rot="R180"/>
 <pad name="GND-IN" x="-8.4" y="19.45" drill="1.5" shape="long" rot="R180"/>
@@ -14502,7 +14502,7 @@ Mating wall wart : TOL-00298 (and others)</description>
 <part name="SUPPLY18" library="supply2" deviceset="GND" device=""/>
 <part name="C3" library="rcl" deviceset="C-US" device="025-025X050" value="22pF"/>
 <part name="C4" library="rcl" deviceset="C-US" device="025-025X050" value="22pF"/>
-<part name="JP2" library="jumper" deviceset="JP1Q" device="" value="GB5V"/>
+<part name="GB5V" library="jumper" deviceset="JP1Q" device="" value="GB5V"/>
 <part name="SUPPLY20" library="supply2" deviceset="+5V" device=""/>
 <part name="SUPPLY22" library="supply2" deviceset="+5V" device=""/>
 <part name="MIDI-OUT" library="pinhead" deviceset="PINHD-1X3" device="" value="MIDI OUT"/>
@@ -14574,7 +14574,7 @@ Mating wall wart : TOL-00298 (and others)</description>
 <instance part="SUPPLY18" gate="GND" x="27.94" y="53.34" rot="R270"/>
 <instance part="C3" gate="G$1" x="33.02" y="68.58" rot="R90"/>
 <instance part="C4" gate="G$1" x="33.02" y="53.34" rot="R90"/>
-<instance part="JP2" gate="A" x="157.48" y="116.84" rot="R180"/>
+<instance part="GB5V" gate="A" x="157.48" y="116.84" rot="R180"/>
 <instance part="SUPPLY20" gate="+5V" x="157.48" y="127"/>
 <instance part="SUPPLY22" gate="+5V" x="101.6" y="124.46" rot="R270"/>
 <instance part="MIDI-OUT" gate="A" x="238.76" y="119.38"/>
@@ -14735,7 +14735,7 @@ Mating wall wart : TOL-00298 (and others)</description>
 </segment>
 <segment>
 <pinref part="SUPPLY20" gate="+5V" pin="+5V"/>
-<pinref part="JP2" gate="A" pin="1"/>
+<pinref part="GB5V" gate="A" pin="1"/>
 </segment>
 <segment>
 <pinref part="SUPPLY26" gate="+5V" pin="+5V"/>
@@ -15019,7 +15019,7 @@ Mating wall wart : TOL-00298 (and others)</description>
 <net name="N$20" class="0">
 <segment>
 <pinref part="X6" gate="G$1" pin="4"/>
-<pinref part="JP2" gate="A" pin="2"/>
+<pinref part="GB5V" gate="A" pin="2"/>
 <wire x1="157.48" y1="99.06" x2="157.48" y2="109.22" width="0.1524" layer="91"/>
 </segment>
 </net>
