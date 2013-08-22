@@ -14509,7 +14509,7 @@ Mating wall wart : TOL-00298 (and others)</description>
 <part name="SUPPLY24" library="supply2" deviceset="+5V" device=""/>
 <part name="X2" library="con-hirschmann" deviceset="MAB5SH" device="" value="MIDI OUT"/>
 <part name="MIDI-IN" library="pinhead" deviceset="PINHD-1X2" device="" value="MIDI IN"/>
-<part name="C6" library="resistor" deviceset="CPOL-US" device="E2.5-7" value="22uF"/>
+<part name="C6" library="resistor" deviceset="CPOL-US" device="E2.5-5" value="22uF"/>
 <part name="SUPPLY16" library="supply2" deviceset="GND" device=""/>
 <part name="PWRIN" library="con-molex" deviceset="22-23-2021" device=""/>
 <part name="IC2" library="linear" deviceset="78*" device="TV" technology="05"/>
