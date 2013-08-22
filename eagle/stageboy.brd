@@ -1352,9 +1352,9 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="44.25" y1="13" x2="43" y2="14.25" width="0.4064" layer="1"/>
 <wire x1="43" y1="14.25" x2="43" y2="19.5" width="0.4064" layer="1"/>
 <wire x1="43" y1="19.5" x2="46.25" y2="22.75" width="0.4064" layer="1"/>
-<wire x1="46.25" y1="22.75" x2="70.25" y2="22.75" width="0.4064" layer="1"/>
-<wire x1="70.25" y1="22.75" x2="71.25" y2="23.75" width="0.4064" layer="1"/>
-<wire x1="71.25" y1="23.75" x2="71.25" y2="36.25" width="0.4064" layer="1"/>
+<wire x1="46.25" y1="22.75" x2="70.5" y2="22.75" width="0.4064" layer="1"/>
+<wire x1="70.5" y1="22.75" x2="71.25" y2="23.5" width="0.4064" layer="1"/>
+<wire x1="71.25" y1="23.5" x2="71.25" y2="36.25" width="0.4064" layer="1"/>
 <wire x1="71.25" y1="36.25" x2="82.25" y2="47.25" width="0.4064" layer="1"/>
 <wire x1="82.25" y1="47.25" x2="83.41" y2="47.25" width="0.4064" layer="1"/>
 <wire x1="83.41" y1="47.25" x2="83.44" y2="47.22" width="0.4064" layer="1"/>
