@@ -5,7 +5,7 @@
  *
  * Pin Settings:
  *   - DIP Switch On Pins 8-10
- *   - LEDs on Pins 11-12
+ *   - LED on Pin 12
  *   - MIDI Opto-Isolator Power On Pin 4
  *   - GameBoy Clock On Analog Pin 0
  *   - Serial Data To GameBoy On Pin 1
@@ -127,11 +127,10 @@ int pinGBSerialOut = 1;    // Analog In 1 - serial data to gameboy
 int pinGBSerialIn  = 2;    // Analog In 2 - serial data from gameboy
 
 int pinMidiInputPower = 4; // power pin for midi input opto-isolator
-
 int pinStatusLed = 12; // Status LED
-//int pinLeds[] = {12,11,10,9,8,13}; // LED Pins
 
-//int pinButtonMode = 3; //toggle button for selecting the mode
+int dipSwitches[] = {8, 9, 10}; // LED Pins
+
 
 /***************************************************************************
 * Memory
@@ -199,6 +198,8 @@ unsigned long midioutNoteTimer[4];
 byte midioutNoteHold[4][4];
 byte midioutNoteHoldCounter[4];
 int midioutNoteTimerThreshold = 10;
+
+byte mode = 0;
 
 /***************************************************************************
 * Counter vars
@@ -296,9 +297,18 @@ void setup() {
 /*
   Init Pins
 */
-  for(int led=0;led<=5;led++) pinMode(pinLeds[led],OUTPUT);
+//  for(int led=0;led<=5;led++) pinMode(pinLeds[led],OUTPUT);
   pinMode(pinStatusLed,OUTPUT);
-  pinMode(pinButtonMode,INPUT); 
+  
+  // Setup DIP switches
+  for(i = 0; i < 3; ++i)
+  {
+    pinMode(dipSwitch[i], INPUT);
+    digitalWrite(dipSwitch[i], HIGH)
+  }
+  
+  pinMode(digitalWrite(dipPins[i], HIGH)
+
   DDRC = B00111111; //Set analog in pins as outputs
   
 /*
@@ -341,9 +351,9 @@ void setup() {
   if(!memory[MEM_FORCE_MODE]) memory[MEM_MODE] = EEPROM.read(MEM_MODE);
   lastMode = memory[MEM_MODE];
   
-  startupSequence();
+  //startupSequence();
   
-  showSelectedMode(); //Light up the LED that shows which mode we are in.
+  //showSelectedMode(); //Light up the LED that shows which mode we are in.
 }
 
 /*

@@ -78,7 +78,7 @@ void updateBlinkLight(int light)
     if(blinkSwitchTime[light] == blinkMaxCount) {
       blinkSwitch[light]=0;
       blinkSwitchTime[light]=0;
-      digitalWrite(pinLeds[light],LOW);
+      digitalWrite(pinStatusLed,LOW);
     }
   }
 }
@@ -95,35 +95,36 @@ void updateStatusLight()
   }
 }
 
+/*
 void blinkLight(byte midiMessage, byte midiValue)
 {
   if(midiValue) {
   switch(midiMessage) {
     case 0x90:
-      if(!blinkSwitch[0]) digitalWrite(pinLeds[0],HIGH);
+      if(!blinkSwitch[0]) digitalWrite(pinStatusLed,HIGH);
       blinkSwitch[0]=1;
       blinkSwitchTime[0]=0;
       break;
     case 0x91:
-      if(!blinkSwitch[1]) digitalWrite(pinLeds[1],HIGH);
+      if(!blinkSwitch[1]) digitalWrite(pinStatusLed,HIGH);
       blinkSwitch[1]=1;
       blinkSwitchTime[1]=0;
       break;
     case 0x92:
-      if(!blinkSwitch[2]) digitalWrite(pinLeds[2],HIGH);
+      if(!blinkSwitch[2]) digitalWrite(pinStatusLed,HIGH);
       blinkSwitch[2]=1;
       blinkSwitchTime[2]=0;
       break;
     case 0x93:
-      if(!blinkSwitch[3]) digitalWrite(pinLeds[3],HIGH);
+      if(!blinkSwitch[3]) digitalWrite(pinStatusLed,HIGH);
       blinkSwitch[3]=1;
       blinkSwitchTime[3]=0;
       break;
     case 0x94:
-      if(!blinkSwitch[0])  digitalWrite(pinLeds[0],HIGH);
+      if(!blinkSwitch[0])  digitalWrite(pinStatusLed,HIGH);
       blinkSwitch[0]=1;
       blinkSwitchTime[0]=0;
-      if(!blinkSwitch[1]) digitalWrite(pinLeds[1],HIGH);
+      if(!blinkSwitch[1]) digitalWrite(pinStatusLed],HIGH);
       blinkSwitch[1]=1;
       blinkSwitchTime[1]=0;
       if(!blinkSwitch[2]) digitalWrite(pinLeds[2],HIGH);
@@ -151,6 +152,7 @@ void blinkLight(byte midiMessage, byte midiValue)
       break;
   }
 }
+*/
 
 void updateProgrammerLeds()
 {
@@ -167,7 +169,7 @@ void updateProgrammerLeds()
     miscLedTime=0;
   }
   miscLedTime++;
-  updateBlinkLights();
+//  updateBlinkLights();
 }
  /*
    updateStatusLed should be placed inside of the main loop cycle of a mode function. It counts to a 

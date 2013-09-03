@@ -26,12 +26,13 @@
 
 void setMode()
 {
-  buttonDepressed = digitalRead(pinButtonMode);
-  if(!memory[MEM_FORCE_MODE] && buttonDepressed) { //if the button is pressed
-    memory[MEM_MODE]++;                           //increment the mode number
-    if(memory[MEM_MODE] > (NUMBER_OF_MODES - 1)) memory[MEM_MODE]=0;  //if the mode is greater then 4 it will wrap back to 0
-    if(!memory[MEM_FORCE_MODE]) EEPROM.write(MEM_MODE, memory[MEM_MODE]); //write mode to eeprom if we arnt forcing a mode in the config
-    showSelectedMode();            //set the LEDS
+  byte state = 0;
+  for (count = 0; count < 3; ++count)
+    state = (state << 1) | digitalRead(dipSwitches[count]);
+  
+  if(mode != state) 
+  {
+    mode = state;
     switchMode();
   }
 }
@@ -44,7 +45,7 @@ void setMode()
  */
 void switchMode()
 {
-  switch(memory[MEM_MODE])
+  switch(state)
   {
     case 0:
       modeLSDJSlaveSyncSetup();
