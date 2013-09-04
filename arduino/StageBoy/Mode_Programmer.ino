@@ -209,7 +209,10 @@ boolean checkForProgrammerSysex(byte sin)
 
 void blinkSelectedLight(int led)
 {
-      if(!blinkSwitch[led]) digitalWrite(pinLeds[led],HIGH);
-      blinkSwitch[led]=1;
-      blinkSwitchTime[led]=0;
+      if(led == 4)
+      {
+        digitalWrite(pinStatusLed,HIGH);
+        blinkSwitch=1;
+        blinkSwitchTime=0;
+      }
 }

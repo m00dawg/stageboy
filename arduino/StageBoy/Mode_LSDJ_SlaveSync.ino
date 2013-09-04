@@ -71,8 +71,8 @@ void modeLSDJSlaveSync()
       }
     }
   }
-  setMode();         //Check if the mode button was depressed
-  updateStatusLight();
+  //setMode();         //Check if the mode button was depressed
+  //updateStatusLight();
   }
 }
 
@@ -124,3 +124,4 @@ void getSlaveSyncEffect(byte note)
       break;
     }
 }
+

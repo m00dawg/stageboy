@@ -4,9 +4,9 @@
    and delays for a period of time to reduce jitter behavior from the mode 
    changing too fast.
  */
- /*
 void showSelectedMode()
 {
+  /*
   digitalWrite(pinStatusLed,LOW);
   
   for(int m=0;m<3;m++) {
@@ -44,87 +44,82 @@ void showSelectedMode()
   }
   lastMode = memory[MEM_MODE];
   delay(300);
+  */
 }
-*/
 
 void updateVisualSync()
 {
     if(!countSyncTime) {
-      if(!blinkSwitch[4]) digitalWrite(pinStatusLed,HIGH);
-      blinkSwitch[4]=1;
-      blinkSwitchTime[4]=0;
+      if(!blinkSwitch) digitalWrite(pinStatusLed,HIGH);
+      blinkSwitch=1;
+      blinkSwitchTime=0;
       countSyncLightTime = 0;
     }
     countSyncTime++;
     if(countSyncTime == 24) countSyncTime=0; 
 }
 
-/*
+
+
 void updateBlinkLights()
 {
-  updateBlinkLight(0);
-  updateBlinkLight(1);
-  updateBlinkLight(2);
-  updateBlinkLight(3);
-  updateBlinkLight(4);
-  updateBlinkLight(5);
+  updateBlinkLight();
 }
-*/
 
-void updateBlinkLight(int light)
+void updateBlinkLight()
 {
-  if(blinkSwitch[light]) {
-    blinkSwitchTime[light]++;
-    if(blinkSwitchTime[light] == blinkMaxCount) {
-      blinkSwitch[light]=0;
-      blinkSwitchTime[light]=0;
-      digitalWrite(pinStatusLed,LOW);
+  if(blinkSwitch) {
+    blinkSwitchTime++;
+    if(blinkSwitchTime == blinkMaxCount) {
+      blinkSwitch=0;
+      blinkSwitchTime=0;
+      digitalWrite(pinStatusLed,HIGH);
     }
   }
 }
 
 void updateStatusLight()
 {
-  if(blinkSwitch[4]) {
-    blinkSwitchTime[4]++;
-    if(blinkSwitchTime[4] == blinkMaxCount) {
-      blinkSwitch[4]=0;
-      blinkSwitchTime[4]=0;
+  if(blinkSwitch) {
+    blinkSwitchTime++;
+    if(blinkSwitchTime == blinkMaxCount) {
+      blinkSwitch=0;
+      blinkSwitchTime=0;
       digitalWrite(pinStatusLed,LOW);
     }
   }
 }
 
-/*
 void blinkLight(byte midiMessage, byte midiValue)
 {
+  /*
   if(midiValue) {
   switch(midiMessage) {
     case 0x90:
-      if(!blinkSwitch[0]) digitalWrite(pinStatusLed,HIGH);
+      if(!blinkSwitch[0]) digitalWrite(pinLeds[0],HIGH);
       blinkSwitch[0]=1;
       blinkSwitchTime[0]=0;
       break;
     case 0x91:
-      if(!blinkSwitch[1]) digitalWrite(pinStatusLed,HIGH);
+      if(!blinkSwitch[1]) digitalWrite(pinLeds[1],HIGH);
       blinkSwitch[1]=1;
       blinkSwitchTime[1]=0;
       break;
     case 0x92:
-      if(!blinkSwitch[2]) digitalWrite(pinStatusLed,HIGH);
+      if(!blinkSwitch[2]) digitalWrite(pinLeds[2],HIGH);
       blinkSwitch[2]=1;
       blinkSwitchTime[2]=0;
       break;
     case 0x93:
-      if(!blinkSwitch[3]) digitalWrite(pinStatusLed,HIGH);
+      if(!blinkSwitch[3]) digitalWrite(pinLeds[3],HIGH);
       blinkSwitch[3]=1;
       blinkSwitchTime[3]=0;
       break;
     case 0x94:
-      if(!blinkSwitch[0])  digitalWrite(pinStatusLed,HIGH);
+      if(!blinkSwitch[0])  digitalWrite(pinLeds[0],HIGH);
       blinkSwitch[0]=1;
       blinkSwitchTime[0]=0;
-      if(!blinkSwitch[1]) digitalWrite(pinStatusLed],HIGH);
+      if(!blinkSwitch[1]) digitalWrite(pinLeds[1],HIGH);
       blinkSwitch[1]=1;
       blinkSwitchTime[1]=0;
       if(!blinkSwitch[2]) digitalWrite(pinLeds[2],HIGH);
@@ -133,6 +128,7 @@ void blinkLight(byte midiMessage, byte midiValue)
       break;
   }
   }
+  */
   switch(midiMessage) {
     case 0xE0:
     case 0xE1:
@@ -144,32 +140,31 @@ void blinkLight(byte midiMessage, byte midiValue)
     case 0xB2:
     case 0xB3:
     case 0xB4:
-      if(!blinkSwitch[4]) digitalWrite(pinStatusLed,HIGH);
-      blinkSwitch[4]=1;
-      blinkSwitchTime[4]=0;
+      if(!blinkSwitch) digitalWrite(pinStatusLed,HIGH);
+      blinkSwitch=1;
+      blinkSwitchTime=0;
       break;
     default:
       break;
   }
 }
-*/
 
 void updateProgrammerLeds()
 {
   if(miscLedTime == miscLedMaxTime) {
     if(sysexProgrammingConnected) {
       miscLedMaxTime = 400;
-      blinkSelectedLight(miscLastLed);
+      //blinkSelectedLight(miscLastLed);
       miscLastLed++;
       if(miscLastLed == 5) miscLastLed = 0;
     } else {
-      blinkSelectedLight(5);
+      //blinkSelectedLight(5);
       miscLedMaxTime = 3000;
     }
     miscLedTime=0;
   }
   miscLedTime++;
-//  updateBlinkLights();
+  updateBlinkLights();
 }
  /*
    updateStatusLed should be placed inside of the main loop cycle of a mode function. It counts to a 
@@ -238,7 +233,22 @@ void startupSequence()
   for(ledFxA=0;ledFxA<6;ledFxA++) digitalWrite(pinLeds[ledFxA], HIGH);   // sets the LED on
   delay(100);
   for(ledFxA=0;ledFxA<6;ledFxA++) digitalWrite(pinLeds[ledFxA], LOW);      // sets the digital pin as output
-  delay(500); 
+  delay(500);
 }
 */
 
+void startupSequence()
+{
+  blinkTimes(5);
+}
+
+void blinkTimes(byte num)
+{
+  for(byte count = 0; count < num; ++count)
+  {
+    digitalWrite(pinStatusLed,HIGH);
+    delay(250);
+    digitalWrite(pinStatusLed,LOW);
+    delay(250);
+  }
+}

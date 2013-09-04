@@ -27,8 +27,8 @@
 void setMode()
 {
   byte state = 0;
-  for (count = 0; count < 3; ++count)
-    state = (state << 1) | digitalRead(dipSwitches[count]);
+  for (byte count = 0; count < 3; ++count)
+    state = (state << 1) | digitalRead(dipSwitch[count]);
   
   if(mode != state) 
   {
@@ -45,27 +45,34 @@ void setMode()
  */
 void switchMode()
 {
-  switch(state)
+  switch(mode)
   {
     case 0:
+      blinkTimes(1);    
       modeLSDJSlaveSyncSetup();
       break;
     case 1:
+      blinkTimes(2);
       modeLSDJMasterSyncSetup();
       break;
     case 2:
+      blinkTimes(3);
       modeLSDJKeyboardSetup();
       break;
     case 3:
+      blinkTimes(4);
       modeNanoloopSetup();
       break;
     case 4:
+      blinkTimes(5);
       modeMidiGbSetup();
       break;
     case 5:
+      blinkTimes(6);
       modeLSDJMapSetup();
       break;
     case 6:
+      blinkTimes(7);
       modeLSDJMidioutSetup();
       break;
   }
@@ -105,11 +112,11 @@ void sequencerStop()
   countSyncTime = 0;          //Used to count a custom amount of clock ticks (2/4/8) for sync effects
   countSyncLightTime=0;
   switchLight=0;
-  digitalWrite(pinLeds[0],LOW);
-  digitalWrite(pinLeds[1],LOW);
-  digitalWrite(pinLeds[2],LOW);
-  digitalWrite(pinLeds[3],LOW);
-  digitalWrite(pinLeds[memory[MEM_MODE]],HIGH);
+  //digitalWrite(pinLeds[0],LOW);
+  //digitalWrite(pinLeds[1],LOW);
+  //digitalWrite(pinLeds[2],LOW);
+  //digitalWrite(pinLeds[3],LOW);
+  //digitalWrite(pinLeds[memory[MEM_MODE]],HIGH);
 }
 
 

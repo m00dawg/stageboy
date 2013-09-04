@@ -129,7 +129,7 @@ int pinGBSerialIn  = 2;    // Analog In 2 - serial data from gameboy
 int pinMidiInputPower = 4; // power pin for midi input opto-isolator
 int pinStatusLed = 12; // Status LED
 
-int dipSwitches[] = {8, 9, 10}; // LED Pins
+int dipSwitch[] = {8, 9, 10}; // DIP Pins
 
 
 /***************************************************************************
@@ -188,8 +188,11 @@ unsigned long int buttonProgrammerWaitTime = 2000; //2 whole seconds
 unsigned long int buttonTime;
 
 
-boolean blinkSwitch[6];
-unsigned long int blinkSwitchTime[6];
+//boolean blinkSwitch[6];
+//unsigned long int blinkSwitchTime[6];
+boolean blinkSwitch;
+unsigned long int blinkSwitchTime;
+
 int switchLight = 0;
 
 int blinkMaxCount = 1000;
@@ -297,17 +300,15 @@ void setup() {
 /*
   Init Pins
 */
-//  for(int led=0;led<=5;led++) pinMode(pinLeds[led],OUTPUT);
-  pinMode(pinStatusLed,OUTPUT);
-  
+  pinMode(pinStatusLed, OUTPUT);     
+
   // Setup DIP switches
-  for(i = 0; i < 3; ++i)
+  for(byte count = 0; count < 3; ++count)
   {
-    pinMode(dipSwitch[i], INPUT);
-    digitalWrite(dipSwitch[i], HIGH)
+    pinMode(dipSwitch[count], INPUT);
+    digitalWrite(dipSwitch[count], HIGH);
   }
   
-  pinMode(digitalWrite(dipPins[i], HIGH)
 
   DDRC = B00111111; //Set analog in pins as outputs
   
@@ -348,18 +349,25 @@ void setup() {
 /*
   Load Settings from EEPROM
 */
-  if(!memory[MEM_FORCE_MODE]) memory[MEM_MODE] = EEPROM.read(MEM_MODE);
-  lastMode = memory[MEM_MODE];
+//  if(!memory[MEM_FORCE_MODE]) memory[MEM_MODE] = EEPROM.read(MEM_MODE);
+//  lastMode = memory[MEM_MODE];
   
-  //startupSequence();
   
   //showSelectedMode(); //Light up the LED that shows which mode we are in.
+  
+  //setMode();
+  startupSequence();
+  delay(1000);
+
+  mode = 0;
+  switchMode();
 }
+
 
 /*
   Main Loop, which we don't use to be able to isolate each mode into its own setup and loop functions
 */
 void loop () {
-  setMode();
-  switchMode();
+  //setMode();
+  //switchMode();
 }
