@@ -3,6 +3,37 @@ StageBoy
 
 Stage-Hardened ArduinoBoy, Balun, Noise Rejection Box all rolled into one.
 
+Noise-Rejection Explained
+-------------------------
+
+The transformer is wired in such a way that the stereo input is wired to the
+outside pins of the transformer, with the ground being the center-tap. So left
+and right become inversed of each other. Thus, when they are playing the same
+content, in theory, the audio would be cancelled out. This is what is being 
+exploited to ultimately reject noise.
+
+Hard panning your desired content (e.g. music), say, to the left, and leaving
+the right channel with no content means that the noise that is common to both
+channels ends up getting rejected by way of being inverted and then cancelled
+out.
+
+For the GameBoy, this has a noticeable improvement over the background noise,
+including the high pitched whine. Any source which has common noise on both
+channels can be used. Which channel is used does not matter, although typically
+the left is used as this keep the musical content un-inverted.
+
+In practice, it is not perfect and, in fact, an active circuit (using op-amps)
+may further improve rejection. This would have required a much more complicated
+power supply and, as a result, the passive route was preffered. It is generally
+good when sticking with the recommended transformer (see BOM) or one better. 
+The quality of the transformer has a direct affect on both the noise rejection
+and the ultiamte quality of the audio output.
+
+Using a transformer means that the output is balanced and isolated. Thus there 
+should not be any issues with ground loops and longer audio cables can be used 
+with less signal degradation. Most mixers and audio capture devices offer balanced 
+inputs and it is highly recommended to use them if at all possible.
+
 Programming the StageBoy
 ------------------------
 
