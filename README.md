@@ -1,10 +1,25 @@
-stageboy
+StageBoy
 ========
 
 Stage-Hardened ArduinoBoy, Balun, Noise Rejection Box all rolled into one.
 
-Using the ISP Headers
----------------------
+Programming the StageBoy
+------------------------
+
+Pulling the Chip:
+
+If you don't want to mess with the ISP headers, you can likely just stuff
+an AVR chip which is already Arduinofied (it has the bootlodaer already -
+as in you previously flashed it with the bootloader or bought an AVR 
+from a place that will flash it for you) into an Uno board and upload
+the code as you normally would. Then you can pull the chip and put it into
+the StageBoy.
+
+If you're not making any changes, and are reasonably confident with your 
+soldering work, this should work without issue. Using the ISP headers, 
+however, makes thins easier to troubleshoot.
+
+Using the ISP Headers:
 
 ISP headers have been used successful with EvilMadScientist's ISP Shield
 (see http://shop.evilmadscientist.com/productsmenu/tinykitlist/253-ispshield)
